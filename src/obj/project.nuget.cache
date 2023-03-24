@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "h/Str+hjXe1ZE8oqX2tgXIUBPjgG/bCoCe0WAk+UXYPyeJnpRcKYoV1OAX6qvZjTYC7/s3vqIIBF+Ask0XLA4w==",
+  "dgSpecHash": "fmWEjIgdhNQFXCxQ0pEPdS9O6QvAh9xFLiPL1St2OfvasecoaDVIeSnitT32CdZaaUKbXwMrAvaAuwFVy8tfTw==",
   "success": true,
   "projectFilePath": "C:\\Course\\WebApiUdemy\\src\\WebApiUdemy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xandr\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\xandr\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
     "C:\\Users\\xandr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\xandr\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\xandr\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
