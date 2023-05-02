@@ -82,3 +82,4 @@ C:\Course\WebApiUdemy\src\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityF
 C:\Course\WebApiUdemy\src\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Course\WebApiUdemy\src\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Course\WebApiUdemy\src\bin\Debug\net6.0\Dapper.dll
+C:\Course\WebApiUdemy\src\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
