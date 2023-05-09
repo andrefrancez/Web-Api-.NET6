@@ -11,7 +11,7 @@ public class CategoryPut {
     public static Delegate Handle => Action;
 
     [Authorize(Policy = "EmployeePolicy")]
-    public static IResult Action([FromRoute]Guid id, HttpContext http, CategoryRequest categoryRequest, ApplicationDbContext context) {
+    public static async Task<IResult> Action([FromRoute]Guid id, HttpContext http, CategoryRequest categoryRequest, ApplicationDbContext context) {
         var userId = http.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
         var category = context.Categories.Where(c => c.Id == id).FirstOrDefault();
         if(category == null) 
@@ -21,7 +21,8 @@ public class CategoryPut {
         if (!category.IsValid)
             return Results.ValidationProblem(category.Notifications.ConvertToProblemDetails());
 
-        context.SaveChanges();
+        await context.SaveChangesAsync();
+
         return Results.Ok();
     }
 }
