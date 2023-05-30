@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Data.SqlClient;
 using System.Text;
+using WebApiUdemy.Domain.Users;
 using WebApiUdemy.Endpoints.Categories;
+using WebApiUdemy.Endpoints.Clients;
 using WebApiUdemy.Endpoints.Employees;
 using WebApiUdemy.Endpoints.Products;
 using WebApiUdemy.Endpoints.Security;
@@ -39,6 +41,7 @@ builder.Services.AddAuthentication(x => {
 });
 
 builder.Services.AddScoped<QueryAllUsersWithClaimName>();
+builder.Services.AddScoped<UserCreator>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -63,6 +66,8 @@ app.MapMethods(TokenPost.Template, TokenPost.Methods, TokenPost.Handle);
 app.MapMethods(ProductPost.Template, ProductPost.Methods, ProductPost.Handle);
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Methods, ProductGetAll.Handle);
 app.MapMethods(ProductGetAllStorefront.Template, ProductGetAllStorefront.Methods, ProductGetAllStorefront.Handle);
+app.MapMethods(ClientPost.Template, ClientPost.Methods, ClientPost.Handle);
+app.MapMethods(ClientGet.Template, ClientGet.Methods, ClientGet.Handle);
 
 app.UseExceptionHandler("/error");
 app.Map("/error", (HttpContext http) => {
