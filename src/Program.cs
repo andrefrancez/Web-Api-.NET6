@@ -9,6 +9,7 @@ using WebApiUdemy.Domain.Users;
 using WebApiUdemy.Endpoints.Categories;
 using WebApiUdemy.Endpoints.Clients;
 using WebApiUdemy.Endpoints.Employees;
+using WebApiUdemy.Endpoints.Orders;
 using WebApiUdemy.Endpoints.Products;
 using WebApiUdemy.Endpoints.Security;
 using WebApiUdemy.Infra.Data;
@@ -22,6 +23,7 @@ builder.Services.AddAuthorization(options => {
     .RequireAuthenticatedUser().Build();
 
     options.AddPolicy("EmployeePolicy", p => p.RequireAuthenticatedUser().RequireClaim("EmployeeCode"));
+    options.AddPolicy("CpfPolicy", p => p.RequireAuthenticatedUser().RequireClaim("Cpf"));
 });
 
 builder.Services.AddAuthentication(x => {
@@ -68,6 +70,7 @@ app.MapMethods(ProductGetAll.Template, ProductGetAll.Methods, ProductGetAll.Hand
 app.MapMethods(ProductGetAllStorefront.Template, ProductGetAllStorefront.Methods, ProductGetAllStorefront.Handle);
 app.MapMethods(ClientPost.Template, ClientPost.Methods, ClientPost.Handle);
 app.MapMethods(ClientGet.Template, ClientGet.Methods, ClientGet.Handle);
+app.MapMethods(OrderPost.Template, OrderPost.Methods, OrderPost.Handle);
 
 app.UseExceptionHandler("/error");
 app.Map("/error", (HttpContext http) => {
